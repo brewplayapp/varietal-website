@@ -228,30 +228,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  overflow: hidden;
 }
 
-.lab-orbit {
-  position: absolute;
-  border-radius: 999px;
-  border: 1px solid rgba(71, 89, 107, 0.2);
-}
-
-.orbit-one {
-  width: 260px;
-  height: 260px;
-  top: 8%;
-  left: -14%;
-  animation: pulse 7s ease-in-out infinite;
-}
-
-.orbit-two {
-  width: 180px;
-  height: 180px;
-  right: -8%;
-  bottom: 15%;
-  animation: pulse 8s ease-in-out infinite reverse;
-}
 
 .app-screenshot {
   display: block;
@@ -383,7 +361,8 @@ a {
 
 .site-footer {
   padding: 2rem 0 3rem;
-  border-top: 1px solid rgba(38, 36, 33, 0.1);
+  background: var(--groupedBackground);
+  border-top: 1px solid rgba(38, 36, 33, 0.08);
 }
 
 .footer-shell {
@@ -519,17 +498,6 @@ a {
   width: 1px;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-}
 
 @media (max-width: 1024px) {
   .hero-grid {
