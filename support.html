@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support | Varietal</title>
+    <meta name="description" content="Get help with the Varietal iOS app. Contact us with any questions or feedback." />
+    <meta name="theme-color" content="#FAF7F2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .support-header {
+        padding: clamp(2.5rem, 5vw, 4rem) 0 1.5rem;
+        border-bottom: 1px solid rgba(38, 36, 33, 0.08);
+        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+      }
+
+      .support-header .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--textTertiary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 1.4rem;
+        transition: color 150ms ease;
+      }
+
+      .support-header .back-link:hover {
+        color: var(--textSecondary);
+      }
+
+      .support-header h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        margin: 0.75rem 0 0;
+      }
+
+      .support-header p {
+        color: var(--textSecondary);
+        margin: 0.6rem 0 0;
+        font-size: 1.05rem;
+        max-width: 56ch;
+      }
+
+      .support-body {
+        max-width: 720px;
+        padding-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .support-body h2 {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 2.2rem 0 0.6rem;
+        letter-spacing: -0.01em;
+      }
+
+      .support-body p {
+        color: var(--textSecondary);
+        margin: 0.6rem 0;
+        line-height: 1.7;
+      }
+
+      .support-body ul {
+        color: var(--textSecondary);
+        margin: 0.6rem 0;
+        padding-left: 1.4rem;
+        line-height: 1.7;
+      }
+
+      .support-body ul li {
+        margin: 0.4rem 0;
+      }
+
+      .support-body a {
+        color: var(--primaryAction);
+        text-underline-offset: 3px;
+      }
+
+      .support-body a:hover {
+        color: #8f2626;
+      }
+
+      .support-contact {
+        margin-top: 2.5rem;
+        background: var(--cardBackground);
+        border: 1px solid rgba(38, 36, 33, 0.06);
+        border-radius: var(--radius-card);
+        padding: clamp(1.4rem, 3vw, 2rem) clamp(1.4rem, 3vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .support-contact p {
+        margin: 0;
+      }
+
+      .support-contact .contact-label {
+        font-size: 0.85rem;
+        color: var(--textTertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+      }
+
+      .support-contact .contact-email {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 500;
+      }
+
+      .support-contact .contact-note {
+        color: var(--textSecondary);
+        font-size: 0.92rem;
+      }
+
+      .support-divider {
+        border: none;
+        border-top: 1px solid rgba(38, 36, 33, 0.08);
+        margin: 2.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary">
+      <div class="container nav-shell card">
+        <a class="brand" href="/" aria-label="Varietal home">
+          <img class="brand-mark" src="assets/brand-mark.jpg" alt="" aria-hidden="true" />
+          <span class="brand-name">Varietal</span>
+        </a>
+        <nav class="main-nav">
+          <a href="/#features">Features</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+        <a class="button button-primary" href="/#cta">Get Early Access</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div class="container">
+        <div class="support-header">
+          <a class="back-link" href="/">&#8592; Back to Varietal</a>
+          <span class="pill pill-sage">Support</span>
+          <h1>How can we help?</h1>
+          <p>We're a small team building Varietal with care. If something isn't working or you have a question, we'd love to hear from you.</p>
+        </div>
+
+        <div class="support-body">
+
+          <h2>Before you reach out</h2>
+          <p>You might find a quick answer in these common topics:</p>
+          <ul>
+            <li><strong>Deleting your data</strong> — go to Settings inside the app and tap <em>Delete All Data</em>.</li>
+            <li><strong>Bag scanning not working</strong> — make sure camera permission is enabled for Varietal in your iPhone Settings, and that the bag label is well-lit and in frame.</li>
+            <li><strong>Data not appearing after reinstall</strong> — Varietal stores data locally on your device. Uninstalling the app removes that data. iCloud backup may restore it if you had backups enabled.</li>
+            <li><strong>Early access</strong> — sign up on the <a href="/#cta">waitlist</a> and we'll reach out when your spot is ready.</li>
+          </ul>
+
+          <hr class="support-divider" />
+
+          <h2>Contact us</h2>
+          <p>For anything else — bug reports, feedback, feature requests, or general questions — email us directly. We read every message and aim to reply within a few business days.</p>
+
+          <div class="support-contact">
+            <p class="contact-label">Email</p>
+            <p class="contact-email"><a href="mailto:tastybeanjuice@gmail.com">tastybeanjuice@gmail.com</a></p>
+            <p class="contact-note">Include your iOS version and a brief description of the issue if you're reporting a bug — it helps us track it down faster.</p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <div class="footer-brand">
+          <p><strong>Varietal</strong> for iOS</p>
+          <p>Organize your setup. Brew with confidence. Refine over time.</p>
+        </div>
+        <div class="footer-meta">
+          <a class="footer-link" href="/privacy-policy">Privacy Policy</a>
+          <a class="footer-link" href="/support">Support</a>
+          <small>© <span id="year"></span> Varietal. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
