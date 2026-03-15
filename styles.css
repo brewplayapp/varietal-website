@@ -138,12 +138,9 @@ a {
 .brand-mark {
   width: 2rem;
   height: 2rem;
-  display: grid;
-  place-items: center;
   border-radius: 999px;
-  background: rgba(165, 46, 46, 0.14);
-  color: var(--primaryAction);
-  font-weight: 600;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .brand-name {
