@@ -227,7 +227,9 @@ a {
 
 .hero-visual {
   position: relative;
-  min-height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   overflow: hidden;
 }
@@ -254,76 +256,15 @@ a {
   animation: pulse 8s ease-in-out infinite reverse;
 }
 
-.phone-frame {
-  position: relative;
-  margin: 1.2rem auto 0;
-  width: min(320px, 100%);
-  min-height: 430px;
-  border-radius: 32px;
-  background: linear-gradient(180deg, rgba(250, 247, 242, 0.95), rgba(245, 240, 232, 0.95));
-  border: 1px solid rgba(38, 36, 33, 0.08);
-  padding: 1rem 1rem 1.3rem;
-  box-shadow: inset 0 1px 0 rgba(250, 247, 242, 0.7), 0 20px 40px rgba(38, 36, 33, 0.1);
-}
-
-.phone-notch {
-  width: 35%;
-  height: 16px;
-  border-radius: 99px;
-  margin: 0 auto 1rem;
-  background: rgba(38, 36, 33, 0.14);
-}
-
-.artwork {
-  width: 100%;
+.app-screenshot {
+  display: block;
+  width: min(280px, 100%);
   height: auto;
+  margin: 0 auto;
+  border-radius: 36px;
+  box-shadow: 0 24px 60px rgba(38, 36, 33, 0.18), 0 4px 12px rgba(38, 36, 33, 0.08);
   user-select: none;
   pointer-events: none;
-}
-
-.artwork-hero {
-  width: min(230px, 88%);
-  margin: 0.35rem auto 0.85rem;
-  opacity: 0.46;
-  filter: drop-shadow(0 4px 10px rgba(38, 36, 33, 0.08));
-}
-
-.screen-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.phone-frame h2 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-.phone-frame p {
-  margin: 0.7rem 0 1rem;
-  color: var(--textSecondary);
-}
-
-.mini-card {
-  border-radius: 14px;
-  padding: 0.9rem;
-  background: rgba(140, 158, 133, 0.11);
-  border: 1px solid rgba(140, 158, 133, 0.28);
-}
-
-.mini-card p {
-  margin: 0;
-  color: var(--textSecondary);
-  font-size: 0.87rem;
-}
-
-.mini-card strong {
-  display: block;
-  margin-top: 0.45rem;
-  font-family: var(--font-data);
-  color: var(--success);
 }
 
 .card-grid {
@@ -332,22 +273,6 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.feature-art-row {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 0 0 1rem;
-  opacity: 0.55;
-}
-
-.artwork-beans {
-  width: clamp(78px, 10vw, 120px);
-}
-
-.artwork-mug {
-  width: clamp(96px, 12vw, 140px);
-}
 
 .feature-card,
 .step,
@@ -404,27 +329,6 @@ a {
   gap: 1rem;
 }
 
-.floating-motif {
-  position: fixed;
-  right: -86px;
-  bottom: -18px;
-  width: clamp(360px, 34vw, 620px);
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 260ms ease, transform 260ms ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-body.show-floating-motif .floating-motif {
-  opacity: 0.13;
-  transform: translateY(0);
-}
-
-.section-motif-man {
-  width: 100%;
-  filter: grayscale(0.15);
-}
 
 .faq-item {
   transition: transform 150ms ease, box-shadow 150ms ease;
@@ -648,11 +552,6 @@ body.show-floating-motif .floating-motif {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .floating-motif {
-    right: -92px;
-    bottom: -20px;
-    width: clamp(300px, 46vw, 520px);
-  }
 }
 
 @media (max-width: 680px) {
@@ -683,20 +582,6 @@ body.show-floating-motif .floating-motif {
     width: 100%;
   }
 
-  .feature-art-row {
-    margin-top: 0.35rem;
-    margin-bottom: 1.1rem;
-  }
-
-  .floating-motif {
-    right: -72px;
-    bottom: -28px;
-    width: 290px;
-  }
-
-  body.show-floating-motif .floating-motif {
-    opacity: 0.1;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

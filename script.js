@@ -31,21 +31,3 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
-
-const secondarySurface = document.getElementById("secondary-surface");
-const footer = document.querySelector(".site-footer");
-
-const updateFloatingMotif = () => {
-  if (!secondarySurface || !footer) return;
-
-  const surfaceTop = secondarySurface.getBoundingClientRect().top;
-  const footerTop = footer.getBoundingClientRect().top;
-  const enteredLowerSurface = surfaceTop <= window.innerHeight * 0.25;
-  const reachedFooter = footerTop <= window.innerHeight * 0.9;
-
-  document.body.classList.toggle("show-floating-motif", enteredLowerSurface && !reachedFooter);
-};
-
-updateFloatingMotif();
-window.addEventListener("scroll", updateFloatingMotif, { passive: true });
-window.addEventListener("resize", updateFloatingMotif);
