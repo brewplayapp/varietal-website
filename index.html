@@ -43,63 +43,24 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header" aria-label="Primary">
-      <div class="container nav-shell card">
-        <div class="brand" aria-label="Varietal">
-          <img class="brand-mark" src="assets/brand-mark.jpg" alt="" aria-hidden="true" />
-          <span class="brand-name">Varietal</span>
-        </div>
-        <div class="nav-end">
-          <nav class="main-nav">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#cta">Early Access</a>
-          </nav>
-          <a class="button button-primary" href="#cta">Get Early Access</a>
+      <div class="container">
+        <div class="nav-shell card">
+          <a class="brand" href="/" aria-label="Varietal – back to top">
+            <img class="brand-mark" src="assets/brand-mark.jpg" alt="" aria-hidden="true" />
+            <span class="brand-name">Varietal</span>
+          </a>
+          <div class="nav-end">
+            <nav class="main-nav">
+              <a href="#features">Features</a>
+              <a href="#cta">Early Access</a>
+            </nav>
+            <a class="button button-primary" href="#cta">Get Early Access</a>
+          </div>
         </div>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section hero" id="home">
-        <div class="container hero-grid">
-          <div class="hero-copy animate-on-load">
-            <span class="pill pill-cherry">Built for Home Brewers</span>
-            <h1>Your coffee ritual, organized and dialed in.</h1>
-            <p>
-              Log beans, save gear settings, and brew with guided steps so your best cup is easier to repeat.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#cta">Get Early Access</a>
-              <a class="button button-secondary" href="#features">Explore Features</a>
-            </div>
-            <div class="hero-metrics" aria-label="Product highlights">
-              <article class="metric card">
-                <p class="metric-label">Setup time</p>
-                <p class="metric-value">&lt; 2 min</p>
-              </article>
-              <article class="metric card">
-                <p class="metric-label">AI bag scan</p>
-                <p class="metric-value">Instant</p>
-              </article>
-              <article class="metric card">
-                <p class="metric-label">Quick launch</p>
-                <p class="metric-value">1 tap</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="hero-visual animate-on-load" aria-hidden="true">
-            <img
-              class="app-screenshot"
-              src="assets/Screenshot1.png"
-              alt=""
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </section>
-
       <div class="secondary-surface" id="secondary-surface">
         <section class="showcase-section" id="features" aria-label="App features">
           <div class="showcase-track">
@@ -108,9 +69,13 @@
               <!-- Left: copy panels, all stacked, crossfade via JS -->
               <div class="showcase-copy">
                 <div class="showcase-panel active" data-index="0">
-                  <span class="pill pill-default">Home</span>
-                  <h2>Your brew command center</h2>
-                  <p>See your beans, gear, and recent brews at a glance. Everything you need to kick off your next cup is one tap away.</p>
+                  <span class="pill pill-cherry">Built for Home Brewers</span>
+                  <h2>Your coffee ritual, organized and dialed in.</h2>
+                  <p>Log beans, save gear settings, and brew with guided steps so your best cup is easier to repeat.</p>
+                  <div class="showcase-actions">
+                    <a class="button button-primary" href="#cta">Get Early Access</a>
+                    <a class="button button-secondary" href="#features">Explore Features</a>
+                  </div>
                 </div>
                 <div class="showcase-panel" data-index="1">
                   <span class="pill pill-cherry">Quick Brew</span>

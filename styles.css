@@ -119,7 +119,14 @@ a {
   background: transparent;
 }
 
+/* Container becomes a flex row so nav-shell can shrink left */
+.site-header .container {
+  display: flex;
+}
+
+/* The pill card that collapses into a logo circle */
 .nav-shell {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,41 +135,39 @@ a {
   background: rgba(245, 240, 232, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-/* Nav-end wraps the nav links + CTA — collapses on scroll */
-.nav-end {
-  display: contents; /* transparent to flex layout by default */
-}
-
-.nav-shell .nav-end {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 800px;
   overflow: hidden;
-  transition: max-width 400ms ease, opacity 300ms ease, gap 400ms ease;
+  /* Transition the pill collapsing to a circle */
+  transition:
+    max-width 450ms cubic-bezier(0.4, 0, 0.2, 1),
+    padding 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    gap 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 2000px;
 }
 
-.site-header.scrolled .nav-end {
-  max-width: 0;
-  opacity: 0;
-  gap: 0;
-  pointer-events: none;
-}
-
-.nav-shell {
-  transition: padding 300ms ease;
-}
-
+/* Collapsed: just the brand-mark circle */
 .site-header.scrolled .nav-shell {
-  padding: 0.55rem 1rem;
+  flex: 0 0 auto;
+  max-width: 2.9rem;   /* brand-mark (2rem) + padding (2 × 0.45rem) */
+  padding: 0.45rem;
+  gap: 0;
+  border-radius: 999px;
+  cursor: pointer;
 }
 
+/* Brand: the logo + name link */
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+  transition: gap 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header.scrolled .brand {
+  gap: 0;
 }
 
 .brand-mark {
@@ -173,10 +178,43 @@ a {
   flex-shrink: 0;
 }
 
+/* Brand name fades + collapses */
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+  opacity: 1;
+  transition:
+    max-width 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms ease;
+}
+
+.site-header.scrolled .brand-name {
+  max-width: 0;
+  opacity: 0;
+}
+
+/* Nav-end (links + CTA) fades + collapses */
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  max-width: 700px;
+  transition:
+    max-width 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 200ms ease,
+    gap 350ms ease;
+}
+
+.site-header.scrolled .nav-end {
+  max-width: 0;
+  opacity: 0;
+  gap: 0;
+  pointer-events: none;
 }
 
 .main-nav {
@@ -274,9 +312,22 @@ a {
 
 /* ── Sticky scroll showcase ─────────────────────────────── */
 
-/* Showcase sits inside .secondary-surface but should match the hero background */
+/* Showcase is now the top of the page — match body background, no seam */
 .showcase-section {
   background: var(--background);
+}
+
+/* Panel 0 acts as the hero — bigger headline, add CTA buttons */
+.showcase-panel[data-index="0"] h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  letter-spacing: -0.03em;
+}
+
+.showcase-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 /* Desktop scroll-track: creates scroll depth, both sides sticky */
