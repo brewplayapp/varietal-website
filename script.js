@@ -31,3 +31,27 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+// Sticky scroll showcase
+const showcasePanels = document.querySelectorAll(".showcase-panel");
+const showcaseImgs = document.querySelectorAll(".showcase-img");
+
+if (showcasePanels.length && showcaseImgs.length) {
+  const setActiveImage = (index) => {
+    showcaseImgs.forEach((img, i) => img.classList.toggle("active", i === index));
+  };
+
+  // Trigger when the panel crosses the vertical midpoint of the viewport
+  const showcaseObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveImage(parseInt(entry.target.dataset.index, 10));
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+  );
+
+  showcasePanels.forEach((panel) => showcaseObserver.observe(panel));
+}
