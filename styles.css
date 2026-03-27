@@ -314,7 +314,7 @@ a {
 
 .features-section {
   background: var(--background);
-  padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem);
 }
 
 /* Centered intro block */
