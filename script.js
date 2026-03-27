@@ -42,33 +42,19 @@ if (siteHeader) {
   );
 }
 
-// Sticky scroll showcase — driven by scroll position through the track
-const showcaseTrack = document.querySelector(".showcase-track");
-const showcasePanels = document.querySelectorAll(".showcase-panel");
-const showcaseImgs = document.querySelectorAll(".showcase-img");
+// Tabbed feature showcase
+const tabBtns = document.querySelectorAll(".tab-btn");
+const tabPanels = document.querySelectorAll(".tab-panel");
 
-if (showcaseTrack && showcasePanels.length && showcaseImgs.length) {
-  let activeIndex = 0;
-
-  const setActive = (index) => {
-    if (index === activeIndex) return;
-    activeIndex = index;
-    showcasePanels.forEach((p, i) => p.classList.toggle("active", i === index));
-    showcaseImgs.forEach((img, i) => img.classList.toggle("active", i === index));
-  };
-
-  const onScroll = () => {
-    const rect = showcaseTrack.getBoundingClientRect();
-    const scrollable = showcaseTrack.offsetHeight - window.innerHeight;
-    const scrolled = -rect.top;
-    const progress = Math.max(0, Math.min(1, scrolled / scrollable));
-    const index = Math.min(
-      Math.floor(progress * showcasePanels.length),
-      showcasePanels.length - 1
-    );
-    setActive(index);
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // set correct state on load
+if (tabBtns.length && tabPanels.length) {
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = parseInt(btn.dataset.tab, 10);
+      tabBtns.forEach((b, i) => {
+        b.classList.toggle("active", i === index);
+        b.setAttribute("aria-selected", i === index ? "true" : "false");
+      });
+      tabPanels.forEach((p, i) => p.classList.toggle("active", i === index));
+    });
+  });
 }

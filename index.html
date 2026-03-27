@@ -62,88 +62,92 @@
 
     <main id="main-content">
       <div class="secondary-surface" id="secondary-surface">
-        <section class="showcase-section" id="features" aria-label="App features">
-          <div class="showcase-track">
-            <div class="showcase-sticky">
+        <section class="tabs-section" id="features" aria-label="App features">
+          <div class="container">
 
-              <!-- Left: copy panels, all stacked, crossfade via JS -->
-              <div class="showcase-copy">
-                <div class="showcase-panel active" data-index="0">
+            <!-- Tab pills — scrollable on mobile -->
+            <div class="tabs-nav" role="tablist" aria-label="App features">
+              <button class="tab-btn active" data-tab="0" role="tab" aria-selected="true"  aria-controls="tab-panel-0">Home</button>
+              <button class="tab-btn"         data-tab="1" role="tab" aria-selected="false" aria-controls="tab-panel-1">Quick Brew</button>
+              <button class="tab-btn"         data-tab="2" role="tab" aria-selected="false" aria-controls="tab-panel-2">Brew Timer</button>
+              <button class="tab-btn"         data-tab="3" role="tab" aria-selected="false" aria-controls="tab-panel-3">Beans</button>
+              <button class="tab-btn"         data-tab="4" role="tab" aria-selected="false" aria-controls="tab-panel-4">Gear</button>
+              <button class="tab-btn"         data-tab="5" role="tab" aria-selected="false" aria-controls="tab-panel-5">Recipes</button>
+            </div>
+
+            <!-- All panels stacked in the same grid cell, crossfade on click -->
+            <div class="tabs-content">
+
+              <div class="tab-panel active" id="tab-panel-0" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-cherry">Built for Home Brewers</span>
                   <h2>Your coffee ritual, organized and dialed in.</h2>
                   <p>Log beans, save gear settings, and brew with guided steps so your best cup is easier to repeat.</p>
-                  <div class="showcase-actions">
+                  <div class="tab-actions">
                     <a class="button button-primary" href="#cta">Get Early Access</a>
-                    <a class="button button-secondary" href="#features">Explore Features</a>
+                    <a class="button button-secondary" href="#cta">Learn More</a>
                   </div>
                 </div>
-                <div class="showcase-panel" data-index="1">
+                <div class="tab-visual">
+                  <img src="assets/Screenshot1.png" alt="Varietal home screen" loading="eager" decoding="async" />
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-panel-1" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-cherry">Quick Brew</span>
                   <h2>Start your go-to brew in seconds</h2>
                   <p>Pick your setup and launch straight into a focused brew flow. No extra screens, no friction — just your coffee.</p>
                 </div>
-                <div class="showcase-panel" data-index="2">
+                <div class="tab-visual">
+                  <img src="assets/Screenshot2.png" alt="Quick Brew screen" loading="lazy" decoding="async" />
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-panel-2" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-sage">Brew Timer</span>
                   <h2>Step-by-step guidance with built-in timers</h2>
                   <p>Follow clear instructions for dose, water target, and timing right when you need them. Each step appears exactly when it's time.</p>
                 </div>
-                <div class="showcase-panel" data-index="3">
+                <div class="tab-visual">
+                  <img src="assets/Screenshot3.png" alt="Brew timer screen" loading="lazy" decoding="async" />
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-panel-3" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-clay">Beans</span>
                   <h2>Log every bag with full detail</h2>
                   <p>Track roaster, origin, process, roast date, and tasting notes. Or just point your camera at the bag and Varietal fills it all in.</p>
                 </div>
-                <div class="showcase-panel" data-index="4">
+                <div class="tab-visual">
+                  <img src="assets/Screenshot4.png" alt="Beans screen" loading="lazy" decoding="async" />
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-panel-4" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-slate">Gear</span>
                   <h2>Save your brewers and grinder settings</h2>
                   <p>Store your brewer and grinder details once, then reuse them across every brew for a cleaner workflow and less guesswork.</p>
                 </div>
-                <div class="showcase-panel" data-index="5">
+                <div class="tab-visual">
+                  <img src="assets/Screenshot5.png" alt="Gear screen" loading="lazy" decoding="async" />
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-panel-5" role="tabpanel">
+                <div class="tab-copy">
                   <span class="pill pill-cherry">Recipes</span>
                   <h2>Recipes built for real home brewing</h2>
                   <p>Browse recipes by method, choose your ratio and grind size, and brew with the same confidence every single time.</p>
                 </div>
-              </div>
-
-              <!-- Right: images, all stacked, crossfade via JS -->
-              <div class="showcase-visual" aria-hidden="true">
-                <div class="showcase-images">
-                  <img class="showcase-img active" src="assets/Screenshot1.png" alt="" loading="eager" decoding="async" />
-                  <img class="showcase-img" src="assets/Screenshot2.png" alt="" loading="lazy" decoding="async" />
-                  <img class="showcase-img" src="assets/Screenshot3.png" alt="" loading="lazy" decoding="async" />
-                  <img class="showcase-img" src="assets/Screenshot4.png" alt="" loading="lazy" decoding="async" />
-                  <img class="showcase-img" src="assets/Screenshot5.png" alt="" loading="lazy" decoding="async" />
-                  <img class="showcase-img" src="assets/Screenshot6.png" alt="" loading="lazy" decoding="async" />
+                <div class="tab-visual">
+                  <img src="assets/Screenshot6.png" alt="Recipes screen" loading="lazy" decoding="async" />
                 </div>
               </div>
 
-            </div>
-          </div>
-
-          <!-- Mobile: stacked panels with inline images -->
-          <div class="showcase-mobile">
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot1.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-default">Home</span><h2>Your brew command center</h2><p>See your beans, gear, and recent brews at a glance. Everything you need to kick off your next cup is one tap away.</p></div>
-            </div>
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot2.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-cherry">Quick Brew</span><h2>Start your go-to brew in seconds</h2><p>Pick your setup and launch straight into a focused brew flow. No extra screens, no friction — just your coffee.</p></div>
-            </div>
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot3.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-sage">Brew Timer</span><h2>Step-by-step guidance with built-in timers</h2><p>Follow clear instructions for dose, water target, and timing right when you need them. Each step appears exactly when it's time.</p></div>
-            </div>
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot4.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-clay">Beans</span><h2>Log every bag with full detail</h2><p>Track roaster, origin, process, roast date, and tasting notes. Or just point your camera at the bag and Varietal fills it all in.</p></div>
-            </div>
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot5.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-slate">Gear</span><h2>Save your brewers and grinder settings</h2><p>Store your brewer and grinder details once, then reuse them across every brew for a cleaner workflow and less guesswork.</p></div>
-            </div>
-            <div class="showcase-mobile-panel">
-              <img src="assets/Screenshot6.png" alt="" loading="lazy" decoding="async" />
-              <div><span class="pill pill-cherry">Recipes</span><h2>Recipes built for real home brewing</h2><p>Browse recipes by method, choose your ratio and grind size, and brew with the same confidence every single time.</p></div>
             </div>
           </div>
         </section>
