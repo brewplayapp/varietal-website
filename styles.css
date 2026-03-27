@@ -130,6 +130,35 @@ a {
   -webkit-backdrop-filter: blur(10px);
 }
 
+/* Nav-end wraps the nav links + CTA — collapses on scroll */
+.nav-end {
+  display: contents; /* transparent to flex layout by default */
+}
+
+.nav-shell .nav-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+  overflow: hidden;
+  transition: max-width 400ms ease, opacity 300ms ease, gap 400ms ease;
+}
+
+.site-header.scrolled .nav-end {
+  max-width: 0;
+  opacity: 0;
+  gap: 0;
+  pointer-events: none;
+}
+
+.nav-shell {
+  transition: padding 300ms ease;
+}
+
+.site-header.scrolled .nav-shell {
+  padding: 0.55rem 1rem;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -252,7 +281,7 @@ a {
 
 /* Desktop scroll-track: creates scroll depth, both sides sticky */
 .showcase-track {
-  height: calc(6 * 100vh); /* 5 panels × 100vh of scroll each */
+  height: calc(7 * 100vh); /* 6 panels × 100vh of scroll each */
 }
 
 .showcase-sticky {
