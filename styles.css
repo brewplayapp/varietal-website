@@ -245,9 +245,14 @@ a {
 
 /* ── Sticky scroll showcase ─────────────────────────────── */
 
+/* Showcase sits inside .secondary-surface but should match the hero background */
+.showcase-section {
+  background: var(--background);
+}
+
 /* Desktop scroll-track: creates scroll depth, both sides sticky */
 .showcase-track {
-  height: calc(7 * 100vh); /* 6 panels × ~116vh of scroll each */
+  height: calc(6 * 100vh); /* 5 panels × 100vh of scroll each */
 }
 
 .showcase-sticky {
