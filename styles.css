@@ -310,118 +310,96 @@ a {
   pointer-events: none;
 }
 
-/* ── Tabbed feature showcase ────────────────────────────── */
+/* ── Alternating feature rows ───────────────────────────── */
 
-.tabs-section {
+.features-section {
   background: var(--background);
-  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
 }
 
-/* Tab pill row — scrollable on mobile */
-.tabs-nav {
+/* Centered intro block */
+.features-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto clamp(4rem, 8vw, 6rem);
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
-.tabs-nav::-webkit-scrollbar { display: none; }
-
-.tab-btn {
-  flex-shrink: 0;
-  border: none;
-  cursor: pointer;
-  font-family: var(--font-body);
+.features-intro h1 {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
   font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(38, 36, 33, 0.06);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.features-intro p {
+  margin: 0.9rem 0 0;
   color: var(--textSecondary);
-  transition: background 200ms ease, color 200ms ease;
-  white-space: nowrap;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  max-width: 48ch;
 }
 
-.tab-btn:hover { background: rgba(38, 36, 33, 0.11); color: var(--textPrimary); }
-
-.tab-btn.active {
-  background: var(--textPrimary);
-  color: var(--background);
+.features-intro .button {
+  margin-top: 1.5rem;
 }
 
-.tab-btn:focus-visible {
-  outline: 3px solid rgba(165, 46, 46, 0.35);
-  outline-offset: 2px;
+/* Row container */
+.feature-rows {
+  display: flex;
+  flex-direction: column;
 }
 
-/* All panels occupy the same grid cell and crossfade */
-.tabs-content {
-  display: grid;
-  grid-template: "main" / 1fr;
-}
-
-.tab-panel {
-  grid-area: main;
+/* Each row */
+.feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
-  opacity: 0;
-  transition: opacity 380ms ease;
-  pointer-events: none;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-top: 1px solid rgba(38, 36, 33, 0.07);
 }
 
-.tab-panel.active {
-  opacity: 1;
-  pointer-events: auto;
+/* Alternate: even rows flip image to the left */
+.feature-row:nth-child(even) .feature-visual {
+  order: -1;
 }
 
 /* Copy */
-.tab-copy h2 {
-  margin: 0.75rem 0 0;
+.feature-copy h2 {
+  margin: 0.65rem 0 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-/* First panel is the hero — larger headline */
-#tab-panel-0 .tab-copy h2 {
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  letter-spacing: -0.03em;
-}
-
-.tab-copy p {
-  margin: 0.85rem 0 0;
+.feature-copy p {
+  margin: 0.65rem 0 0;
   color: var(--textSecondary);
-  font-size: 1.06rem;
-  max-width: 44ch;
-  line-height: 1.6;
-}
-
-.tab-actions {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 40ch;
 }
 
 /* Visual */
-.tab-visual {
+.feature-visual {
   display: flex;
   justify-content: center;
 }
 
-.tab-visual img {
+.feature-visual img {
   display: block;
-  width: min(320px, 100%);
+  width: min(280px, 100%);
   height: auto;
-  border-radius: 44px;
-  box-shadow: 0 32px 80px rgba(38, 36, 33, 0.2), 0 4px 16px rgba(38, 36, 33, 0.08);
+  border-radius: 40px;
+  box-shadow: 0 24px 64px rgba(38, 36, 33, 0.18), 0 4px 14px rgba(38, 36, 33, 0.07);
   user-select: none;
   pointer-events: none;
 }
@@ -742,36 +720,34 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Tabs: left-align pills so they're clearly scrollable */
-  .tabs-nav {
-    justify-content: flex-start;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Stack: image on top, copy below */
-  .tab-panel {
+  /* Stack each row: image on top, copy below */
+  .feature-row {
     grid-template-columns: 1fr;
+    padding: clamp(2rem, 6vw, 3rem) 0;
+    gap: 1.5rem;
   }
 
-  .tab-visual { order: -1; }
-
-  .tab-visual img {
-    width: min(260px, 80%);
-    border-radius: 36px;
+  /* Always image on top regardless of even/odd */
+  .feature-visual {
+    order: -1;
   }
 
-  #tab-panel-0 .tab-copy h2 {
-    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  /* Undo the even-row flip so order: -1 always wins */
+  .feature-row:nth-child(even) .feature-visual {
+    order: -1;
   }
 
-  .tab-actions {
-    flex-direction: column;
+  .feature-visual img {
+    width: min(240px, 75%);
+    border-radius: 34px;
   }
 
-  .tab-actions .button {
-    width: 100%;
-    text-align: center;
+  .feature-copy p {
+    max-width: 100%;
+  }
+
+  .features-intro h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 }
 

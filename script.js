@@ -42,19 +42,3 @@ if (siteHeader) {
   );
 }
 
-// Tabbed feature showcase
-const tabBtns = document.querySelectorAll(".tab-btn");
-const tabPanels = document.querySelectorAll(".tab-panel");
-
-if (tabBtns.length && tabPanels.length) {
-  tabBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const index = parseInt(btn.dataset.tab, 10);
-      tabBtns.forEach((b, i) => {
-        b.classList.toggle("active", i === index);
-        b.setAttribute("aria-selected", i === index ? "true" : "false");
-      });
-      tabPanels.forEach((p, i) => p.classList.toggle("active", i === index));
-    });
-  });
-}
