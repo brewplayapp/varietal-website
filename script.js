@@ -32,13 +32,4 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// Collapsing header — condenses to logo-only after scrolling past hero
-const siteHeader = document.querySelector(".site-header");
-if (siteHeader) {
-  window.addEventListener(
-    "scroll",
-    () => siteHeader.classList.toggle("scrolled", window.scrollY > 80),
-    { passive: true }
-  );
-}
 
