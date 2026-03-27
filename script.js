@@ -32,26 +32,33 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// Sticky scroll showcase
+// Sticky scroll showcase — driven by scroll position through the track
+const showcaseTrack = document.querySelector(".showcase-track");
 const showcasePanels = document.querySelectorAll(".showcase-panel");
 const showcaseImgs = document.querySelectorAll(".showcase-img");
 
-if (showcasePanels.length && showcaseImgs.length) {
-  const setActiveImage = (index) => {
+if (showcaseTrack && showcasePanels.length && showcaseImgs.length) {
+  let activeIndex = 0;
+
+  const setActive = (index) => {
+    if (index === activeIndex) return;
+    activeIndex = index;
+    showcasePanels.forEach((p, i) => p.classList.toggle("active", i === index));
     showcaseImgs.forEach((img, i) => img.classList.toggle("active", i === index));
   };
 
-  // Trigger when the panel crosses the vertical midpoint of the viewport
-  const showcaseObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveImage(parseInt(entry.target.dataset.index, 10));
-        }
-      });
-    },
-    { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-  );
+  const onScroll = () => {
+    const rect = showcaseTrack.getBoundingClientRect();
+    const scrollable = showcaseTrack.offsetHeight - window.innerHeight;
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / scrollable));
+    const index = Math.min(
+      Math.floor(progress * showcasePanels.length),
+      showcasePanels.length - 1
+    );
+    setActive(index);
+  };
 
-  showcasePanels.forEach((panel) => showcaseObserver.observe(panel));
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // set correct state on load
 }
