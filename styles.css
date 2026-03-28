@@ -730,31 +730,30 @@ a {
 }
 
 .recipe-steps li {
-  display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  gap: 0.75rem;
+  position: relative;
+  padding-left: 2.25rem;
   font-size: 0.93rem;
   color: var(--textSecondary);
   line-height: 1.55;
   counter-increment: steps;
-  align-items: start;
 }
 
 .recipe-steps li::before {
   content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
   font-family: var(--font-data);
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--textTertiary);
   background: rgba(38, 36, 33, 0.06);
-  min-width: 1.5rem;
+  width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.05rem;
 }
 
 .recipe-steps code {
