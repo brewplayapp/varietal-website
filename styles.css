@@ -878,7 +878,6 @@ a {
     flex-wrap: wrap;
   }
 
-  .hero-metrics,
   .card-grid,
   .steps {
     grid-template-columns: 1fr;
@@ -907,9 +906,36 @@ a {
     min-width: 100%;
   }
 
-  .button-primary,
-  .button-secondary {
+  /* Full-width buttons in hero and CTA sections only — not the nav */
+  .hero-actions .button-primary,
+  .hero-actions .button-secondary,
+  .cta-form .button-primary {
     width: 100%;
+  }
+
+  /* Compact nav button on mobile */
+  .site-header .button-primary {
+    padding: 9px 16px;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  /* Metrics: stay as 3 columns, just tighter */
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .metric {
+    padding: 0.65rem 0;
+  }
+
+  .metric-label {
+    font-size: 0.71rem;
+  }
+
+  .metric-value {
+    font-size: 0.95rem;
   }
 
 }
