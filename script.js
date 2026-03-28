@@ -39,7 +39,7 @@ window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
   if (currentScrollY > lastScrollY && currentScrollY > 80) {
     siteHeader.classList.add("header-hidden");
-  } else {
+  } else if (currentScrollY < 60) {
     siteHeader.classList.remove("header-hidden");
   }
   lastScrollY = currentScrollY;

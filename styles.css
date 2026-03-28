@@ -40,12 +40,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  background-color: var(--background);
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--textPrimary);
   background: radial-gradient(circle at 10% 10%, rgba(140, 158, 133, 0.08), transparent 35%),
-    radial-gradient(circle at 90% 0%, rgba(184, 133, 107, 0.08), transparent 30%), var(--background);
+    radial-gradient(circle at 90% 20%, rgba(184, 133, 107, 0.08), transparent 30%), var(--background);
   line-height: 1.5;
 }
 
@@ -913,11 +917,21 @@ a {
     width: 100%;
   }
 
+  /* Single-row nav on mobile: hide links, keep brand + button */
+  .main-nav {
+    display: none;
+  }
+
   /* Compact nav button on mobile */
   .site-header .button-primary {
     padding: 9px 16px;
     font-size: 0.875rem;
     flex-shrink: 0;
+  }
+
+  /* Constrain hero screenshot to match feature image sizing */
+  .app-screenshot {
+    width: min(240px, 75%);
   }
 
   /* Metrics: stay as 3 columns, just tighter */
