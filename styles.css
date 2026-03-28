@@ -85,7 +85,6 @@ a {
 
 .secondary-surface {
   position: relative;
-  background: var(--groupedBackground);
 }
 
 .secondary-surface section {
@@ -117,6 +116,11 @@ a {
   z-index: 40;
   padding: 0.75rem 0;
   background: transparent;
+  transition: transform 320ms ease;
+}
+
+.site-header.header-hidden {
+  transform: translateY(-110%);
 }
 
 .nav-shell {
@@ -486,7 +490,7 @@ a {
 
 .site-footer {
   padding: 2rem 0 3rem;
-  background: var(--groupedBackground);
+  background: var(--cardBackground);
   border-top: 1px solid rgba(38, 36, 33, 0.08);
 }
 
