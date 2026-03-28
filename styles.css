@@ -922,6 +922,12 @@ a {
     display: none;
   }
 
+  /* Hide hero pill and CTA buttons on mobile — nav button is sufficient */
+  .hero-copy .pill,
+  .hero-actions {
+    display: none;
+  }
+
   /* Compact nav button on mobile */
   .site-header .button-primary {
     padding: 9px 16px;
@@ -934,23 +940,6 @@ a {
     width: min(240px, 75%);
   }
 
-  /* Metrics: stay as 3 columns, just tighter */
-  .hero-metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.25rem;
-  }
-
-  .metric {
-    padding: 0.65rem 0;
-  }
-
-  .metric-label {
-    font-size: 0.71rem;
-  }
-
-  .metric-value {
-    font-size: 0.95rem;
-  }
 
 }
 
