@@ -846,21 +846,17 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Stack each row: image on top, copy below */
+  /* Stack each row: copy on top, image below */
   .feature-row {
     grid-template-columns: 1fr;
     padding: clamp(2rem, 6vw, 3rem) 0;
     gap: 1.5rem;
   }
 
-  /* Always image on top regardless of even/odd */
-  .feature-visual {
-    order: -1;
-  }
-
-  /* Undo the even-row flip so order: -1 always wins */
+  /* Reset any desktop order overrides — natural DOM order (copy → image) */
+  .feature-visual,
   .feature-row:nth-child(even) .feature-visual {
-    order: -1;
+    order: 0;
   }
 
   .feature-visual img {
@@ -922,8 +918,9 @@ a {
     display: none;
   }
 
-  /* Hide hero pill and CTA buttons on mobile — nav button is sufficient */
+  /* Hide hero pill, feature row pills, and CTA buttons on mobile */
   .hero-copy .pill,
+  .feature-copy .pill,
   .hero-actions {
     display: none;
   }
