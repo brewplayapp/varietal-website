@@ -1,5 +1,5 @@
 const observerOptions = {
-  threshold: 0.2,
+  threshold: 0.15,
   rootMargin: "0px 0px -40px 0px",
 };
 
@@ -44,5 +44,3 @@ window.addEventListener("scroll", () => {
   }
   lastScrollY = currentScrollY;
 }, { passive: true });
-
-

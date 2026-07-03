@@ -53,7 +53,6 @@
         <nav class="main-nav">
           <a href="#features">Features</a>
           <a href="/recipes">Recipes</a>
-          <a href="https://apps.apple.com/ca/app/varietal/id6757376629" target="_blank" rel="noopener">Download</a>
         </nav>
         <a class="button button-primary" href="https://apps.apple.com/ca/app/varietal/id6757376629" target="_blank" rel="noopener">Download for iOS</a>
       </div>
@@ -65,7 +64,7 @@
       <section class="section hero" id="home">
         <div class="container">
           <div class="hero-grid">
-            <div class="hero-copy animate-on-load">
+            <div class="hero-copy animate-on-load in-view">
               <span class="pill pill-cherry">Built for Home Brewers</span>
               <h1>Your coffee ritual, organized and dialed in.</h1>
               <p>Log beans, save gear settings, and brew with guided steps so your best cup is easier to repeat.</p>
@@ -74,12 +73,20 @@
                 <a class="button button-secondary" href="#features">Explore Features</a>
               </div>
             </div>
-            <div class="hero-visual animate-on-load">
+            <div class="hero-visual animate-on-load in-view" aria-hidden="true">
               <img
-                class="app-screenshot"
+                class="hero-phone hero-phone-back"
+                src="assets/Screenshot3.png"
+                alt=""
+                width="260"
+                loading="eager"
+                decoding="async"
+              />
+              <img
+                class="hero-phone hero-phone-front"
                 src="assets/Screenshot1.png"
-                alt="Varietal app home screen"
-                width="390"
+                alt="Varietal app home screen showing beans, brewers, and latest brews"
+                width="280"
                 loading="eager"
                 decoding="async"
               />
@@ -88,83 +95,87 @@
         </div>
       </section>
 
-      <!-- Feature rows -->
+      <!-- Feature bento -->
       <section class="features-section" id="features" aria-label="App features">
-          <div class="container">
-            <div class="feature-rows">
-
-              <div class="feature-row">
-                <div class="feature-copy">
-                  <span class="pill pill-cherry">Quick Brew</span>
-                  <h2>Start your go-to brew in seconds</h2>
-                  <p>Pick your setup and launch straight into a focused brew flow. No extra screens, no friction — just your coffee.</p>
-                </div>
-                <div class="feature-visual">
-                  <img src="assets/Screenshot2.png" alt="Quick Brew screen" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-copy">
-                  <span class="pill pill-sage">Brew Timer</span>
-                  <h2>Step-by-step guidance, built-in timers</h2>
-                  <p>Follow clear instructions for dose, water target, and timing right when you need them. Each step appears exactly when it's time.</p>
-                </div>
-                <div class="feature-visual">
-                  <img src="assets/Screenshot3.png" alt="Brew timer screen" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-copy">
-                  <span class="pill pill-clay">Beans</span>
-                  <h2>Log every bag with full detail</h2>
-                  <p>Track roaster, origin, process, roast date, and tasting notes. Or just point your camera at the bag and Varietal fills it all in.</p>
-                </div>
-                <div class="feature-visual">
-                  <img src="assets/Screenshot4.png" alt="Beans screen" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-copy">
-                  <span class="pill pill-slate">Gear</span>
-                  <h2>Save your brewers and grinder settings</h2>
-                  <p>Store your brewer and grinder details once, then reuse them across every brew for a cleaner workflow and less guesswork.</p>
-                </div>
-                <div class="feature-visual">
-                  <img src="assets/Screenshot5.png" alt="Gear screen" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-copy">
-                  <span class="pill pill-cherry">Recipes</span>
-                  <h2>Recipes built for real home brewing</h2>
-                  <p>Browse recipes by method, choose your ratio and grind size, and brew with the same confidence every single time.</p>
-                  <a href="/recipes" class="link-arrow">See all available recipes</a>
-                </div>
-                <div class="feature-visual">
-                  <img src="assets/Screenshot6.png" alt="Recipes screen" loading="lazy" decoding="async" />
-                </div>
-              </div>
-
-            </div>
+        <div class="container">
+          <div class="section-heading features-heading animate-on-load">
+            <h2>The whole ritual, on one screen or five.</h2>
+            <p>Beans, gear, recipes, and guided brews live in one calm place — so dialing in a cup takes seconds, not spreadsheets.</p>
           </div>
+
+          <div class="bento-grid stagger-group">
+
+            <article class="card bento-card bento-lg">
+              <div class="bento-copy">
+                <span class="pill pill-cherry">Quick Brew</span>
+                <h3>Start your go-to brew in seconds</h3>
+                <p>Pick your bean, brewer, and recipe, then jump straight into a focused brew flow. No extra screens, no friction.</p>
+              </div>
+              <div class="bento-shot">
+                <img src="assets/Screenshot2.png" alt="Brew Settings screen with bean, brewer, recipe, and grind size" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="card bento-card bento-lg">
+              <div class="bento-copy">
+                <span class="pill pill-sage">Brew Timer</span>
+                <h3>Guided steps with built-in timers</h3>
+                <p>Dose, water target, and timing appear exactly when it's time — each pour, right on cue.</p>
+              </div>
+              <div class="bento-shot bento-shot-mid">
+                <img src="assets/Screenshot3.png" alt="Brew timer showing a step countdown and pour instructions" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="card bento-card">
+              <div class="bento-copy">
+                <span class="pill pill-clay">Beans</span>
+                <h3>Log every bag</h3>
+                <p>Roaster, origin, process, tasting notes — or point your camera at the bag and it's filled in for you.</p>
+              </div>
+              <div class="bento-shot">
+                <img src="assets/Screenshot4.png" alt="The Stash screen listing coffee beans" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="card bento-card">
+              <div class="bento-copy">
+                <span class="pill pill-slate">Gear</span>
+                <h3>Your setup, saved</h3>
+                <p>Store brewers and grinder settings once, then reuse them on every brew.</p>
+              </div>
+              <div class="bento-shot">
+                <img src="assets/Screenshot5.png" alt="Method screen listing brewers and grinders" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+            <article class="card bento-card">
+              <div class="bento-copy">
+                <span class="pill pill-default">Recipes</span>
+                <h3>Built for real brewing</h3>
+                <p>Browse by method, set your ratio and grind, and brew with the same confidence every time.</p>
+                <a href="/recipes" class="link-arrow">See all recipes</a>
+              </div>
+              <div class="bento-shot">
+                <img src="assets/Screenshot6.png" alt="Recipe detail for the 4:6 Method with steps" loading="lazy" decoding="async" />
+              </div>
+            </article>
+
+          </div>
+        </div>
       </section>
 
-      <div class="secondary-surface">
-        <section class="section" id="cta">
-          <div class="container">
-            <div class="card cta-panel animate-on-load">
-              <span class="pill pill-sage">Available Now</span>
-              <h2>Your next better cup starts here.</h2>
-              <p>Download Varietal free on the App Store. Currently available for iPhone and iPad.</p>
-              <a class="button button-primary" href="https://apps.apple.com/ca/app/varietal/id6757376629" target="_blank" rel="noopener">Download for iOS</a>
-            </div>
+      <!-- CTA -->
+      <section class="section cta-section" id="cta">
+        <div class="container">
+          <div class="card cta-panel animate-on-load">
+            <span class="pill pill-sage">Available Now</span>
+            <h2>Your next better cup starts here.</h2>
+            <p>Download Varietal free on the App Store. Available for iPhone and iPad.</p>
+            <a class="button button-primary" href="https://apps.apple.com/ca/app/varietal/id6757376629" target="_blank" rel="noopener">Download for iOS</a>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
     </main>
 
